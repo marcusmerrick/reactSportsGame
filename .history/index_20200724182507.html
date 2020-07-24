@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='root'></div>    
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+
+
+        class Team extends React.Component {
+            constructor (props) {
+                super (props)
+                return 
+                    <h1> Team: {props.name}</
+
+            }
+            
+        }
+
+        function App (props) {
+            return (
+                <div>
+                    <h1> Welcome to the Sports Game Starter!</h1>
+                    <Team name="Sara" />
+                    <Team name="Edite" />
+                    
+                
+                </div>
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.querySelector('#root')
+        )
+    </script>
+</body>
+</html>

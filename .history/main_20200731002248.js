@@ -102,7 +102,7 @@ function App(props){
     }
     const mutation = {
         name: 'Mutations',
-        logoSrc: "./assets/images/mutation.png"
+        logoSrc: "./assets/mutation.png"
     }
 
 

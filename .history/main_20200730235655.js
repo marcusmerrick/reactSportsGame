@@ -7,8 +7,8 @@ class Team extends React.Component {
             score: 0,
         }
 
-        this.shotSound = new Audio('./assets/sounds/fireball.wav')
-        this.scoreSound = new Audio('./assets/sounds/up.wav')
+        this.shotSound = new Audio('./assets/fireball.wav')
+        this.scoreSound = new Audio('./assets/up.wav')
     }
 
     shotHandler = () => {
@@ -65,59 +65,15 @@ class Team extends React.Component {
 
 function Game(props) {
     return (
-        <div className='Game'>
-            <h1>Welcome to {props.venue}</h1>
-            <div className="stats">
-          <Team 
-                name={props.visitingTeam.name} 
-                logo={props.visitingTeam.logoSrc}
-             />
-
-            <div className="versus">
-                <h1>VS</h1>
-            </div>
-            
-            <Team 
-                name={props.homeTeam.name}
-                logo={props.homeTeam.logoSrc} 
-            />
-            </div>
-        </div>
+        <div className=
     )
 }
 
 // Deafault App component that all other compents are rendered through
 function App(props){
-    const covid = {
-        name: 'Covid 19s',
-        logoSrc: "./assets/images/team1.jpg",
-    }
-    const heros = {
-        name: 'Corporate Heros',
-        logoSrc: "./assets/images/team2.jpg",
-    }
-    const nih = {
-        name: 'NIH',
-        logoSrc: "./assets/images/NIH.jpg",
-    }
-    const mutation = {
-        name: 'Mutations',
-        logoSrc: "./assets/images/mutation.png"
-    }
-
-
     return (
       <div className="App">
-          <Game 
-            venue="Johns Hopkins" 
-            homeTeam={covid}
-            visitingTeam={heros}
-          />
-          <Game 
-          venue="The Mayo Clinic" 
-          homeTeam={nih}
-          visitingTeam={mutation}
-          />
+          
       </div>
     )
   }

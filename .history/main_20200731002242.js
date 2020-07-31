@@ -98,11 +98,11 @@ function App(props){
     }
     const nih = {
         name: 'NIH',
-        logoSrc: "./assets/images/NIH.jpg",
+        logoSrc: "./assets/NIH.jpg",
     }
     const mutation = {
         name: 'Mutations',
-        logoSrc: "./assets/images/mutation.png"
+        logoSrc: "./assets/mutation.png"
     }
 
 

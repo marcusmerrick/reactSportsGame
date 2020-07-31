@@ -7,8 +7,8 @@ class Team extends React.Component {
             score: 0,
         }
 
-        this.shotSound = new Audio('./assets/sounds/fireball.wav')
-        this.scoreSound = new Audio('./assets/sounds/up.wav')
+        this.shotSound = new Audio('./assets/fireball.wav')
+        this.scoreSound = new Audio('./assets/up.wav')
     }
 
     shotHandler = () => {
@@ -69,18 +69,15 @@ function Game(props) {
             <h1>Welcome to {props.venue}</h1>
             <div className="stats">
           <Team 
-                name={props.visitingTeam.name} 
-                logo={props.visitingTeam.logoSrc}
-             />
+          name="Covid 19s" 
+            logo="./assets/team1.jpg" />
 
             <div className="versus">
                 <h1>VS</h1>
             </div>
             
-            <Team 
-                name={props.homeTeam.name}
-                logo={props.homeTeam.logoSrc} 
-            />
+            <Team name="Corporate Heros" 
+            logo="./assets/team2.jpg" />
             </div>
         </div>
     )
@@ -90,19 +87,19 @@ function Game(props) {
 function App(props){
     const covid = {
         name: 'Covid 19s',
-        logoSrc: "./assets/images/team1.jpg",
+        logoSrc: "./assets/team1.jpg",
     }
     const heros = {
         name: 'Corporate Heros',
-        logoSrc: "./assets/images/team2.jpg",
+        logoSrc: "./assets/team2.jpg",
     }
     const nih = {
         name: 'NIH',
-        logoSrc: "./assets/images/NIH.jpg",
+        logoSrc: "./assets/NIH.jpg",
     }
     const mutation = {
         name: 'Mutations',
-        logoSrc: "./assets/images/mutation.png"
+        logoSrc: "./assets/mutation.png"
     }
 
 

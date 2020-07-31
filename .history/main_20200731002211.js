@@ -90,19 +90,19 @@ function Game(props) {
 function App(props){
     const covid = {
         name: 'Covid 19s',
-        logoSrc: "./assets/images/team1.jpg",
+        logoSrc: "./assets/team1.jpg",
     }
     const heros = {
         name: 'Corporate Heros',
-        logoSrc: "./assets/images/team2.jpg",
+        logoSrc: "./assets/team2.jpg",
     }
     const nih = {
         name: 'NIH',
-        logoSrc: "./assets/images/NIH.jpg",
+        logoSrc: "./assets/NIH.jpg",
     }
     const mutation = {
         name: 'Mutations',
-        logoSrc: "./assets/images/mutation.png"
+        logoSrc: "./assets/mutation.png"
     }
 
 

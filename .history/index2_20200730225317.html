@@ -1,0 +1,68 @@
+<script>
+class Team extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            count: Number(this.props.initialCount) || 0
+        }
+        this.state2 = {
+            count2: Number(this.props.initialCount2) || 0
+        }
+        this.name = {name}
+        this.logo = ""
+
+    }
+    handleShoot1 = (event) => {
+        let rand = Math.random()
+        if (rand < .5) return
+            this.setState((state, props) =>
+            ({
+                count: state.count +1
+            }))
+    }
+    handleShoot2 = (event) => {
+        let rand2 = Math.random()
+        if (rand2 < .5) return
+            this.setState((state2, props) =>
+            ({
+                count2: state2.count2 +1
+            }))
+    }
+    teamInfo() {
+
+    }
+    render() {
+
+    
+        return (
+            <div>
+                <button onClick = {this.handleShoot1}>Shoot!</button>
+                <h3>Team </h3>
+                <h3> Score Team (pull info here): {this.state.count}</h3>
+                <br />
+
+            </div>
+
+        )
+    }
+
+}
+
+function App () {
+    return (
+        <div>
+        <h1> Welcome to the Sports Game Starter!</h1>
+        <h2> 
+        </h2>
+        <Team initialCount = {0}/>
+        <Team initialCount2 = {0}/>
+        </div>
+    )
+}
+
+ReactDOM.render(
+    <App />,
+    document.querySelector('#root')
+)
+</script

@@ -42,7 +42,7 @@ function ScoreBoard(props) {
 
             <h3>SCOREBOARD</h3>
 
-            <div className="teamStats">
+            <div className='teamStats'>
                 <h3>HOME</h3>
                 <h3>{props.homeTeamStats.score}</h3>
             </div>
@@ -108,7 +108,7 @@ class Game extends React.Component {
     render() {
         return (
             <div className='Game'>
-                <ScoreBoard
+                <scoreBoard
                     visitingTeamStats={this.state.visitingTeamStats}
                     homeTeamStats={this.state.homeTeamStats}
                 />

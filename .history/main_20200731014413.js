@@ -108,7 +108,7 @@ class Game extends React.Component {
     render() {
         return (
             <div className='Game'>
-                <ScoreBoard
+                <scoreBoard
                     visitingTeamStats={this.state.visitingTeamStats}
                     homeTeamStats={this.state.homeTeamStats}
                 />

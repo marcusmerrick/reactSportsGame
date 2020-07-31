@@ -32,11 +32,7 @@ function Team(props) {
     )
 }
 
-function scoreBoard(props) {
-    return (
-        
-    )
-}
+
 class Game extends React.Component {
     
     constructor(props) {
@@ -83,10 +79,6 @@ class Game extends React.Component {
         this.setState((state, props) => ({
             resetCount: state.resetCount +1,
             homeTeamStats: {
-                shots: 0,
-                score: 0
-            },
-            visitingTeamStats: {
                 shots: 0,
                 score: 0
             }

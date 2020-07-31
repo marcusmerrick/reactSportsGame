@@ -32,11 +32,7 @@ function Team(props) {
     )
 }
 
-function scoreBoard(props) {
-    return (
-        
-    )
-}
+
 class Game extends React.Component {
     
     constructor(props) {

@@ -32,18 +32,13 @@ function Team(props) {
     )
 }
 
-function scoreBoard(props) {
-    return (
-        
-    )
-}
+
 class Game extends React.Component {
     
     constructor(props) {
         super(props)
 
         this.state = {
-            resetCount: 0,
             homeTeamStats: {
                 shots: 0,
                 score: 0,
@@ -59,7 +54,7 @@ class Game extends React.Component {
 
     shoot = (team) => {
         const teamStatsKey = `${team}TeamStats`
-        let score = this.state[teamStatsKey].score
+        let score = this.state.score
         this.shotSound.play()
 
         if(Math.random() > 0.5) {
@@ -73,26 +68,12 @@ class Game extends React.Component {
 
         this.setState((state, props) => ({
             [teamStatsKey] : {
-            shots: state[teamStatsKey].shots +1,
+            shots: state.shots +1,
             score
             }
         }))
     }
-
-    resetGame = () => {
-        this.setState((state, props) => ({
-            resetCount: state.resetCount +1,
-            homeTeamStats: {
-                shots: 0,
-                score: 0
-            },
-            visitingTeamStats: {
-                shots: 0,
-                score: 0
-            }
-        }))
-    }
-
+    
     render() {
         return (
             <div className='Game'>
@@ -107,15 +88,11 @@ class Game extends React.Component {
 
                 <div className="versus">
                     <h1>VS</h1>
-                    <div>
-                        <strong>Resets:</strong> {this.state.resetCount}
-                        <button onClick={this.resetGame}>Reset Game</button>
-                    </div>
                 </div>
                 
                 <Team 
                     name={this.props.homeTeam.name}
-                    logo={this.props.homeTeam.logoSrc} 
+                    logo={props.homeTeam.logoSrc} 
                     stats={this.state.homeTeamStats}
                     shotHandler={() => this.shoot('home')}
                 />

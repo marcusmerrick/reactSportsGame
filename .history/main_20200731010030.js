@@ -12,43 +12,38 @@ function Team(props) {
 
     return (
         <div className="Team">
-            <h2>{props.name}</h2>
+            <h2>{this.props.name}</h2>
 
             <div className="identity">
-                <img src={props.logo} alt={props.name} />
+                <img src={this.props.logo} alt={this.props.name} />
             </div>
 
             <div> 
-                <strong>Shots:</strong> {props.stats.shots}
+                <strong>Shots:</strong> {this.state.shots}
             </div>
             <div>
-                <strong>Score:</strong> {props.stats.score}
+                <strong>Score:</strong> {this.state.score}
             </div>
 
             {shotPercentageDiv}
 
-            <button onClick={props.shotHandler}>Shoot!</button>
+            <button onClick={this.shotHandler}>Shoot!</button>
         </div>
     )
 }
 
-function scoreBoard(props) {
-    return (
-        
-    )
-}
+
 class Game extends React.Component {
     
     constructor(props) {
         super(props)
 
         this.state = {
-            resetCount: 0,
-            homeTeamStats: {
+            homeTeamStats = {
                 shots: 0,
                 score: 0,
             },
-            visitingTeamStats: {
+            visitingTeamStats = {
                 shots: 0,
                 score: 0,
             }
@@ -59,7 +54,7 @@ class Game extends React.Component {
 
     shoot = (team) => {
         const teamStatsKey = `${team}TeamStats`
-        let score = this.state[teamStatsKey].score
+        let score = this.state.score
         this.shotSound.play()
 
         if(Math.random() > 0.5) {
@@ -73,51 +68,33 @@ class Game extends React.Component {
 
         this.setState((state, props) => ({
             [teamStatsKey] : {
-            shots: state[teamStatsKey].shots +1,
+            shots: state.shots +1,
             score
             }
         }))
     }
-
-    resetGame = () => {
-        this.setState((state, props) => ({
-            resetCount: state.resetCount +1,
-            homeTeamStats: {
-                shots: 0,
-                score: 0
-            },
-            visitingTeamStats: {
-                shots: 0,
-                score: 0
-            }
-        }))
-    }
-
+    
     render() {
         return (
             <div className='Game'>
-                <h1>Welcome to {this.props.venue}</h1>
+                <h1>Welcome to {props.venue}</h1>
                 <div className="stats">
             <Team 
-                    name={this.props.visitingTeam.name} 
-                    logo={this.props.visitingTeam.logoSrc}
+                    name={props.visitingTeam.name} 
+                    logo={props.visitingTeam.logoSrc}
                     stats={this.state.visitingTeamStats}
-                    shotHandler={() => this.shoot('visiting')}
+                    shotHandler={this.shoot}
                 />
 
                 <div className="versus">
                     <h1>VS</h1>
-                    <div>
-                        <strong>Resets:</strong> {this.state.resetCount}
-                        <button onClick={this.resetGame}>Reset Game</button>
-                    </div>
                 </div>
                 
                 <Team 
-                    name={this.props.homeTeam.name}
-                    logo={this.props.homeTeam.logoSrc} 
+                    name={props.homeTeam.name}
+                    logo={props.homeTeam.logoSrc} 
                     stats={this.state.homeTeamStats}
-                    shotHandler={() => this.shoot('home')}
+                    shotHandler={this.shoot}
                 />
                 </div>
             </div>
